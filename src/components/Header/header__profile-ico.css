@@ -1,0 +1,13 @@
+.header__profile-ico {
+   margin: 0 0 0 17px;
+   padding: 8px 7px;
+   width: 11,5px;
+   height: 14px;
+   background-color: #F9F9F9;
+   border-radius: 4px;
+}
+
+.header__profile-ico:hover {
+   opacity: 0.6;
+   transition: 0.5s ease;
+}

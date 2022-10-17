@@ -1,0 +1,24 @@
+.register__redirect-button {
+   padding: 0;
+   margin: 0;
+   background-color: #FFFFFF;
+   text-decoration: none;
+   border: none;
+   color: #2BE080;
+   font-size: 14px;
+   line-height: 16.94px;
+   font-weight: 400;
+   cursor: pointer;
+}
+
+.register__redirect-button:hover {
+   opacity: 0.6;
+   transition: 0.5s ease;
+}
+
+@media screen and (max-width: 485px) {
+   .register__redirect-button {
+      font-size: 12px;
+      line-height: 14.52px;
+   }
+}

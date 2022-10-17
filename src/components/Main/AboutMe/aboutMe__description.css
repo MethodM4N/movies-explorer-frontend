@@ -1,0 +1,39 @@
+.aboutMe__description {
+   margin: 0 0 99px;
+   padding: 0;
+   width: 600px;
+   color: #000000;
+   font-size: 14px;
+   line-height: 22px;
+   font-weight: 400;
+}
+
+@media screen and (max-width: 1279px) {
+   .aboutMe__description {
+      max-width: 364px;
+   }
+}
+
+@media screen and (max-width: 885px) {
+   .aboutMe__description {
+      width: 364px;
+      margin: 0 0 87px;
+      font-size: 12px;
+      line-height: 18px;
+   }
+}
+
+@media screen and (max-width: 767px) {
+   .aboutMe__description {
+      max-width: 220px;
+   }
+}
+
+@media screen and (max-width: 685px) {
+   .aboutMe__description {
+      margin: 0 0 40px;
+      font-size: 11px;
+      line-height: 16px;
+      max-width: 292px;
+   }
+}

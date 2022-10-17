@@ -1,0 +1,18 @@
+.header__profile-name {
+   margin: 0;
+   color: #000000;
+   font-size: 14px;
+   line-height: 16px;
+   font-weight: 500;
+}
+
+.header__profile-name:hover {
+   opacity: 0.6;
+   transition: 0.5s ease;
+}
+
+@media screen and (max-width: 485px) {
+   .header__profile-name {
+      font-size: 10px;
+   }
+}

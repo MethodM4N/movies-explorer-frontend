@@ -1,0 +1,24 @@
+.portfolio__flex {
+   margin: 0 0 20px;
+   padding: 0;
+   display: flex;
+   justify-content: space-between;
+   border-bottom: solid 1px #E8E8E8;
+}
+
+.portfolio__flex:last-child {
+   margin: 0 0 125px;
+   border-bottom: none;
+}
+
+@media screen and (max-width: 885px) {
+   .portfolio__flex:last-child {
+      margin: 0 0 90px;
+   }
+}
+
+@media screen and (max-width: 485px) {
+   .portfolio__flex:last-child {
+      margin: 0 0 70px;
+   }
+}

@@ -1,0 +1,14 @@
+.header__container {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   text-decoration: none;
+}
+
+@media screen and (max-width: 885px) {
+   .header__container_movies:last-of-type {
+      display: none;
+   }
+}
