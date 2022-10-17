@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     location.pathname === '/' ? setLoggedIn(false) : setLoggedIn(true)
-  }, [location.pathname]);
+  }, [location.pathname]); 
 
   return (
       <>
