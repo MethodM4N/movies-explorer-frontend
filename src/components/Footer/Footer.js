@@ -7,10 +7,10 @@ function Footer() {
             <p className="footer__copyright">&copy; 2022</p>    
             <ul className="footer__links">
                <li>
-                  <a className="footer__link" href="https://practicum.yandex.ru/profile/web/">Яндекс.Практикум</a>
+                  <a className="footer__link" href="https://practicum.yandex.ru/profile/web/" rel="noreferrer" target="_blank">Яндекс.Практикум</a>
                </li>
                <li>
-                  <a className="footer__link" href="https://github.com/MethodM4N">Github</a>
+                  <a className="footer__link" href="https://github.com/MethodM4N" rel="noreferrer" target="_blank">Github</a>
                </li>
             </ul>
          </div>

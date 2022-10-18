@@ -4,7 +4,7 @@ import headerLogo from '../../images/header-logo.svg'
 function Register() {
    return (
       <section className="register">
-         <Link to="/" style={{ width: "38px" }}><img className="header__logo header__logo_auth" src={headerLogo} alt="Лого" /></Link>
+         <Link to="/" className="register__head-link"><img className="header__logo" src={headerLogo} alt="Лого" /></Link>
          <h2 className="register__title">Добро пожаловать!</h2>
          <label className="register__info">Имя</label>
          <input className="register__input" placeholder=""></input>

@@ -3,7 +3,7 @@ function SearchForm() {
    return (
       <section className="searchForm">
          <form className="searchForm__flex">
-            <input className="searchForm__input" placeholder="Фильм"></input>
+            <input className="searchForm__input" placeholder="Фильм" required></input>
             <button className="searchForm__find-button"></button>
          </form>
          <div className="searchForm__filter">

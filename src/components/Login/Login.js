@@ -4,7 +4,7 @@ import headerLogo from '../../images/header-logo.svg'
 function Login() {
    return (
       <section className="login">
-         <Link to="/" style={{ width: "38px" }}><img className="header__logo header__logo_auth" src={headerLogo} alt="Лого"/></Link>
+         <Link to="/" className="login__head-link"><img className="header__logo" src={headerLogo} alt="Лого"/></Link>
          <h2 className="login__title">Рады видеть!</h2>
          <label className="login__info">E-mail</label>
          <input className="login__input" placeholder=""></input>

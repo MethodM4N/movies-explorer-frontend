@@ -11,7 +11,7 @@ function AboutMe() {
                <p className="aboutMe__description">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена 
                и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». 
                После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
-               <a className="aboutMe__git-link" href='https://github.com/MethodM4N'>Github</a>
+               <a className="aboutMe__git-link" href='https://github.com/MethodM4N' rel="noreferrer" target="_blank">Github</a>
             </div>
             <img className="aboutMe__photo" src={aboutMePhoto} alt="Фото студента" />
          </div>

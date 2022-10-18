@@ -1,0 +1,17 @@
+.login__head-link {
+   margin: 0;
+   padding: 0;
+   width: 38px;
+   height: 38px;
+}
+
+.login__head-link:hover {
+   opacity: 0.8;
+   transition: 0.5s ease;
+}
+
+@media screen and (max-width: 485px) {
+   .login__head-link {
+      margin: 0 auto;
+   }
+}

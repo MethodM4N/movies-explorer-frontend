@@ -1,9 +1,13 @@
 .portfolio__flex {
    margin: 0 0 20px;
    padding: 0;
-   display: flex;
-   justify-content: space-between;
    border-bottom: solid 1px #E8E8E8;
+   list-style-type: none;
+}
+
+.portfolio__flex:hover {
+   opacity: 0.4;
+   transition: 0.3s ease;
 }
 
 .portfolio__flex:last-child {

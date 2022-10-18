@@ -72,6 +72,7 @@
 @import url(./components/Profile/profile__input.css);
 @import url(./components/Profile/profile__button.css);
 @import url(./components/Register/register.css);
+@import url(./components/Register/register__head-link.css);
 @import url(./components/Register/register__title.css);
 @import url(./components/Register/register__info.css);
 @import url(./components/Register/register__input.css);
@@ -81,6 +82,7 @@
 @import url(./components/Register/register__redirect-info.css);
 @import url(./components/Register/register__redirect-button.css);
 @import url(./components/Login/login.css);
+@import url(./components/Login/login__head-link.css);
 @import url(./components/Login/login__title.css);
 @import url(./components/Login/login__info.css);
 @import url(./components/Login/login__input.css);
