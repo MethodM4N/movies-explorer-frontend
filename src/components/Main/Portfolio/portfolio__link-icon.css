@@ -1,0 +1,15 @@
+.portfolio__link-icon {
+   margin: 0 0 10px;
+   padding: 0;
+   width: 16px;
+   height: 16px;
+   align-self: center;
+}
+
+@media screen and (max-width: 485px) {
+   .portfolio__link-icon {
+      margin-bottom: 16px;
+      width: 11px;
+      height: 11px;
+   }
+}
