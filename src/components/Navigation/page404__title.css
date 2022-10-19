@@ -1,0 +1,16 @@
+.page404__title {
+   margin: 0 0 5px;
+   padding: 0;
+   color: #000000;
+   font-size: 140px;
+   line-height: 169.43px;
+   font-weight: 400;
+}
+
+@media screen and (max-width: 485px) {
+   .page404__title {
+      margin: 0 0 10px;
+      font-size: 80px;
+      line-height: 96.82px;
+   }
+}

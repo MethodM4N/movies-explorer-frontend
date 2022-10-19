@@ -1,0 +1,19 @@
+.searchForm {
+   min-height: 148px;
+   padding: 80px 70px 0;
+   margin: 0 auto;
+}
+
+@media screen and (max-width: 885px) {
+   .searchForm {
+      min-height: 160px;
+      padding: 80px 30px 0;
+   }
+}
+
+@media screen and (max-width: 485px) {
+   .searchForm {
+      min-height: 160px;
+      padding: 80px 14px 0;
+   }
+}

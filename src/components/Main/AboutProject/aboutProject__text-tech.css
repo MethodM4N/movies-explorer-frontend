@@ -1,0 +1,34 @@
+.aboutProject__text-tech {
+   margin: 0 auto 110px;
+   padding: 0;
+   text-align: center;
+   color: #A0A0A0;
+   font-size: 14px;
+   line-height: 17px;
+   font-weight: 400;
+   flex-grow: 1;
+}
+
+.aboutProject__text-tech:last-child {
+   flex-grow: 5;
+}
+
+@media screen and (max-width: 885px) {
+   .aboutProject__text-tech {
+      margin: 0 auto 90px;
+   }
+}
+
+@media screen and (max-width: 485px) {
+   .aboutProject__text-tech {
+      margin: 0 auto 70px;
+      font-size: 11px;
+      line-height: 12.74px;
+   }
+}
+
+@media screen and (max-width: 485px) {
+   .aboutProject__text-tech:last-child {
+      flex-grow: 2.5;
+   }
+}

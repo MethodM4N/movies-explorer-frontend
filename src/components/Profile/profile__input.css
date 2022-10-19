@@ -1,0 +1,24 @@
+.profile__input {
+   margin: 0;
+   padding: 0;
+   background: #FFFFFF;
+   border: 0;
+   text-align: right;
+   color: #000000;
+   flex-grow: 1;
+   font-size: 11px;
+   line-height: 13.31px;
+   font-weight: 400;
+}
+
+.profile__input::placeholder {
+   text-align: right;
+   font-size: 11px;
+   line-height: 13.31px;
+   font-weight: 400;
+   color: #000000;
+}
+
+.profile__input:focus {
+   outline: none;
+}

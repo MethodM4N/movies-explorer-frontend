@@ -1,0 +1,19 @@
+.page404 {
+   margin: 0;
+   padding: 246px 0 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+@media screen and (max-width: 885px) {
+   .page404 {
+      padding: 408px 0 0;
+   }
+}
+
+@media screen and (max-width: 485px) {
+   .page404 {
+      padding: 329px 0 0;
+   }
+}
