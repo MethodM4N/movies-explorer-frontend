@@ -1,6 +1,6 @@
 .profile__container {
    display: flex;
-   margin: 0 auto 17px;
+   margin: 0 auto 5px;
    padding: 0 0 16px;
    border-bottom: solid 1px #E8E8E8;
    width: 410px;
@@ -8,25 +8,12 @@
 }
 
 .profile__container:last-of-type {
-   margin: 0 auto 220px;
    padding: 0;
    border-bottom: none;
-}
-
-@media screen and (max-width: 885px) {
-   .profile__container:last-of-type {
-      margin: 0 auto 210px;
-   }
 }
 
 @media screen and (max-width: 485px) {
    .profile__container {
       width: 260px;
-   }
-}
-
-@media screen and (max-width: 485px) {
-   .profile__container:last-of-type {
-      margin: 0 auto 379px;
    }
 }

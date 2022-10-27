@@ -16,6 +16,11 @@
    transition: 0.5s ease;
 }
 
+.register__button:disabled {
+   background-color: #7f8083;
+   cursor: unset;
+}
+
 @media screen and (max-width: 605px) {
    .register__button {
       padding: 15px 67px;

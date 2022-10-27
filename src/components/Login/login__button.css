@@ -16,6 +16,11 @@
    transition: 0.5s ease;
 }
 
+.login__button:disabled {
+   background-color: #7f8083;
+   cursor: unset;
+}
+
 @media screen and (max-width: 605px) {
    .login__button {
       padding: 15px 112px;

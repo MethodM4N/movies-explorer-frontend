@@ -1,0 +1,25 @@
+.profile__error-massage {
+   height: 12px;
+   margin: 0 auto;
+   padding: 0;
+   color: #EE3465;
+   font-size: 10px;
+   line-height: 12.1px;
+   font-weight: 400;
+}
+
+.profile__error-massage:last-of-type {
+   margin: 0 auto 220px;
+}
+
+@media screen and (max-width: 885px) {
+   .profile__error-massage:last-of-type {
+      margin: 0 auto 210px;
+   }
+}
+
+@media screen and (max-width: 485px) {
+   .profile__error-massage:last-of-type {
+      margin: 0 auto 379px;
+   }
+}
