@@ -26,9 +26,6 @@ function Profile({ onEditProfile, onLogout, feedbackMessage }) {
    useEffect(() => {
       setName(currentUser.name);
       setEmail(currentUser.email);
-   }, [currentUser]);
-
-   useEffect(() => {
       setValue('name', currentUser.name);
       setValue('email', currentUser.email);
    }, [currentUser]);
@@ -46,6 +43,7 @@ function Profile({ onEditProfile, onLogout, feedbackMessage }) {
                value: /^[A-Za-zА-Яа-я -]+$/,
                message: 'Допустимы только буквы',
                },
+               validate: name => name !== currentUser.name
             })}></input>
          </div>
          <span className="profile__error-massage">{errors?.name?.message}</span>
@@ -53,15 +51,16 @@ function Profile({ onEditProfile, onLogout, feedbackMessage }) {
             <p className="profile__info">E-mail</p>
             <input className="profile__input" placeholder={email}
             {...register('email', {
-            required: 'Введите email',
-            pattern: {
-            value: /^\w+(\[\+\.-\]?\w)*@\w+(\[\.-\]?\w+)*\.[a-z]+$/i,
-            message: 'Введите корректный email',
-            },
+               required: 'Введите email',
+               pattern: {
+               value: /^\w+(\[\+\.-\]?\w)*@\w+(\[\.-\]?\w+)*\.[a-z]+$/i,
+               message: 'Введите корректный email',
+               },
+               validate: email => email !== currentUser.email
             })}></input>
          </div>
          <span className="profile__error-massage">{errors?.email?.message}</span>
-         <button className="profile__button" disabled={!isValid || feedbackMessage}>{feedbackMessage ? feedbackMessage : 'Редактировать'}</button>
+         <button className="profile__button" disabled={!isValid || feedbackMessage }>{feedbackMessage ? feedbackMessage : 'Редактировать'}</button>
          <button className="profile__button" onClick={onLogout}>Выйти из аккаунта</button>
       </form>
    )
