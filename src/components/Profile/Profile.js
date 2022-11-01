@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Profile({ onEditProfile, onLogout }) {
+function Profile({ onEditProfile, onLogout, feedbackMessage }) {
    const currentUser = useContext(CurrentUserContext);
    const [name, setName] = useState(currentUser.name);
    const [email, setEmail] = useState(currentUser.email);
@@ -13,6 +13,7 @@ function Profile({ onEditProfile, onLogout }) {
       formState: { errors, isValid },
       handleSubmit,
       reset,
+      setValue,
    } = useForm({
       mode: 'onChange',
    });
@@ -25,6 +26,11 @@ function Profile({ onEditProfile, onLogout }) {
    useEffect(() => {
       setName(currentUser.name);
       setEmail(currentUser.email);
+   }, [currentUser]);
+
+   useEffect(() => {
+      setValue('name', currentUser.name);
+      setValue('email', currentUser.email);
    }, [currentUser]);
 
    return (
@@ -55,7 +61,7 @@ function Profile({ onEditProfile, onLogout }) {
             })}></input>
          </div>
          <span className="profile__error-massage">{errors?.email?.message}</span>
-         <button className="profile__button" disabled={!isValid}>Редактировать</button>
+         <button className="profile__button" disabled={!isValid || feedbackMessage}>{feedbackMessage ? feedbackMessage : 'Редактировать'}</button>
          <button className="profile__button" onClick={onLogout}>Выйти из аккаунта</button>
       </form>
    )

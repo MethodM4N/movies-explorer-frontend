@@ -23,6 +23,7 @@ function App() {
   const [isHeaderNavigationOpen, setIsHeaderNavigationOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [profileMessage, setProfileMessage] = useState('');
   const history = useHistory();
 
   function handleHeaderNavigationClose() {
@@ -37,15 +38,17 @@ function App() {
     setIsLoading(true);
     mainApi.signUp(data)
       .then(() => {
-        history.push('/signin');
-        setErrorMessage(false);
+        handleUserSignIn(data);
       })
       .catch((err) => {
-        setErrorMessage(err);
+        setErrorMessage(err.message);
         console.log(err);
       })
       .finally(() => {
-        setIsLoading(false);
+        setTimeout(function () {
+          setErrorMessage(null);
+          setIsLoading(false);
+        }, 2500);
       })
   }
 
@@ -55,17 +58,22 @@ function App() {
       .then((res) => {
         if (res.message === 'Вход совершен успешно') {
           setLoggedIn(true);
+          handleInitialCards();
+          checkToken();
           history.push('/movies');
         }
       }
       )
       .catch((err) => {
         setLoggedIn(false);
-        setErrorMessage(err);
+        setErrorMessage(err.message);
         console.log(err);
       })
       .finally(() => {
-        setIsLoading(false);
+        setTimeout(function () {
+          setErrorMessage(null);
+          setIsLoading(false);
+        }, 2500);
       })
   }
 
@@ -75,12 +83,7 @@ function App() {
       .then((res) => {
         if (res) {
           setLoggedIn(false);
-          localStorage.removeItem('token');
-          localStorage.removeItem('movies');
-          localStorage.removeItem('searchQuery');
-          localStorage.removeItem('checkbox');
-          localStorage.removeItem('isSubmitted');
-          localStorage.removeItem('foundMovies');
+          deleteStorage();
           setErrorMessage(false);
           setIsLoading(false);
           setCurrentUser('');
@@ -101,14 +104,26 @@ function App() {
       .checkToken()
       .then((res) => {
         setCurrentUser(res.data);
-        handleGetMovie();
+        handleGetMovies();
         setLoggedIn(true);
       })
       .catch((err) => {
         setLoggedIn(false);
+        deleteStorage();
+        setCurrentUser('');
+        setSavedMovies([]);
         console.log(err);
       })
   }, [])
+
+  function deleteStorage() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('movies');
+    localStorage.removeItem('searchQuery');
+    localStorage.removeItem('checkbox');
+    localStorage.removeItem('isSubmitted');
+    localStorage.removeItem('foundMovies');
+  }
 
   useEffect(() => {
     if (loggedIn) {
@@ -121,16 +136,24 @@ function App() {
     mainApi.updateUserInfo(profile)
       .then((res) => {
         setCurrentUser(res.data);
-        setIsLoading(false);
+        setProfileMessage('Профиль изменен')
       })
       .catch((err) => {
-        console.log(err)
+        setProfileMessage(err.message);
+        console.log(err);
       })
+      .finally(() => {
+        setIsLoading(false);
+        checkToken();
+        setTimeout(function () {
+          setProfileMessage(null);
+        }, 2500);
+      });
   }
 
   // Movies
 
-  useEffect(() => {
+  function handleInitialCards() {
     setIsLoading(true)
     moviesApi
       .getInitialCards()
@@ -144,6 +167,10 @@ function App() {
       .finally(() => {
         setIsLoading(false)
       });
+  }
+
+  useEffect(() => {
+    handleInitialCards();
   }, [loggedIn]);
 
   function handleMovieSave(card) {
@@ -153,14 +180,8 @@ function App() {
         setErrorMessage("");
       })
       .catch(err => {
-        setErrorMessage(err);
         console.log(err)
       })
-      .finally(() => {
-        setTimeout(function () {
-          setErrorMessage("");
-        }, 2500);
-      });
   }
 
   function handleMovieDelete(card) {
@@ -171,14 +192,8 @@ function App() {
         setErrorMessage("");
       })
       .catch(err => {
-        setErrorMessage(err);
         console.log(err);
       })
-      .finally(() => {
-        setTimeout(function () {
-          setErrorMessage("");
-        }, 2500);
-      });
   }
 
   function handleSavedMovieDelete(card) {
@@ -189,17 +204,11 @@ function App() {
         setErrorMessage("");
       })
       .catch(err => {
-        setErrorMessage(err);
         console.log(err);
       })
-      .finally(() => {
-        setTimeout(function () {
-          setErrorMessage("");
-        }, 1500);
-      });
   }
 
-  function handleGetMovie() {
+  function handleGetMovies() {
     mainApi.getSavedMovies()
     .then((res) => {
       setSavedMovies(res.data);
@@ -254,6 +263,7 @@ function App() {
           exact path="/profile"
           component={Profile}
           loggedIn={loggedIn}
+          feedbackMessage = {profileMessage}
           onEditProfile={handleUpdateProfile}
           onLogout={handleUserSignOut}
           >
@@ -261,11 +271,19 @@ function App() {
 
           <Route path="/signup">
             <Register
+            loggedIn={loggedIn}
+            history={history}
+            isLoading={isLoading}
+            errorMessage={errorMessage}
             onRegister={handleUserSignUp} />
           </Route>
 
           <Route path="/signin">
             <Login
+            loggedIn={loggedIn}
+            history={history}
+            isLoading={isLoading}
+            errorMessage={errorMessage}
             onLogin={handleUserSignIn} />
           </Route>
 

@@ -3,6 +3,10 @@
    color: #000000;
    font-size: 13px;
    line-height: 18px;
+   font-weight: 400;
+}
+
+.header__link_active {
    font-weight: 500;
 }
 

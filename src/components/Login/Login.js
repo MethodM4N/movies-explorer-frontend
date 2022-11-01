@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import headerLogo from '../../images/header-logo.svg'
 
-function Login({ onLogin }) {
+function Login({ onLogin, loggedIn, history, isLoading, errorMessage }) {
+
+   useEffect(() => {
+      if (loggedIn) {
+         history.push('/');
+      }
+   }, [loggedIn]);
 
    const {
       register,
@@ -42,7 +49,8 @@ function Login({ onLogin }) {
             minLength: { value: 4, message: 'Минимум 4 символа' },
          })}></input>
          <span className="login__error-massage">{errors?.password?.message}</span>
-         <button className="login__button" disabled={!isValid}>Войти</button>
+         <span className="login__error-massage">{errorMessage}</span>
+         <button className="login__button" disabled={!isValid || isLoading}>Войти</button>
          <div className="login__container">
             <label className="login__redirect-info">Ещё не зарегистрированы?</label>
             <Link className="login__redirect-button" to="/signup">Регистрация</Link>

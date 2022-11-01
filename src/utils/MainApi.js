@@ -136,14 +136,15 @@ class MainApi {
       };
 
    _getResponseData(res) {
-      if (!res.ok) {
-         return Promise.reject(`Ошибка: ${res.status} ${res.message}`);
+      if (res.ok) {
+         return res.json();
       }
-      return res.json();
+      return res.json()
+         .then((text => Promise.reject({status: res.status, message: text.message})))
    }
 
 }
 
 export const mainApi = new MainApi({
-   baseUrl: 'https://api.movies.kolganov.nomorepartiesxyz.ru'
+   baseUrl: 'http://localhost:3001'
 })
