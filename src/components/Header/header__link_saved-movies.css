@@ -6,6 +6,10 @@
    font-weight: 400;
 }
 
+.header__link_active {
+   font-weight: 500;
+}
+
 @media screen and (max-width: 885px) {
    .header__link_saved-movies {
       display: none;

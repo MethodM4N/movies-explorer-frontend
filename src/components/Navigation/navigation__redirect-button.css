@@ -1,6 +1,6 @@
 .navigation__redirect-button {
-   padding: 0;
-   margin: 0 0 28px;
+   padding: 0 0 4px;
+   margin: 0 0 22px;
    background-color: #FFFFFF;
    text-decoration: none;
    border: none;
@@ -11,8 +11,12 @@
    cursor: pointer;
 }
 
+.navigation__redirect-button_active {
+   border-bottom: solid 2px #000000;
+}
+
 .navigation__redirect-button:nth-child(3) {
-   margin: 0 0 621px;
+   margin: 0 0 615px;
 }
 
 .navigation__redirect-button:hover {
@@ -28,7 +32,6 @@
 
 @media screen and (max-width: 485px) {
    .navigation__redirect-button:nth-child(3) {
-      margin: 0 0 444px;
+      margin: 0 0 438px;
    }
 }
-

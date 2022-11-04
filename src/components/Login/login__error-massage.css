@@ -9,11 +9,15 @@
 }
 
 .login__error-massage:last-of-type {
-   margin: 0 0 221px;
+   padding: 35px 0 0;
+   margin: 0 auto 180px;
+   text-align: center;
+   font-size: 14px;
+   line-height: 15.1px;
 }
 
 @media screen and (max-width: 485px) {
    .login__error-massage:last-of-type {
-      margin: 0 0 309px;
+      margin: 0 auto 268px;
    }
 }

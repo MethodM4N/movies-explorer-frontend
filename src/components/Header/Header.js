@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import headerLogo from '../../images/header-logo.svg'
 import profileIco from '../../images/header-profileIco.svg'
 import Navigation from '../Navigation/Navigation';
@@ -22,8 +22,8 @@ function Header(props) {
       <header className="header header_movies">
          <div className="header__container header__container_movies">
             <Link to="/"><img className="header__logo" src={headerLogo} alt="Лого" /></Link>
-            <Link className="header__link header__link_movies"  to='/movies'>Фильмы</Link>
-            <Link className="header__link header__link_saved-movies" to='/saved-movies'>Сохранённые фильмы</Link>
+            <NavLink className="header__link header__link_movies" activeClassName="header__link_active" exact to='/movies'>Фильмы</NavLink>
+            <NavLink className="header__link header__link_saved-movies" activeClassName="header__link_active" exact to='/saved-movies'>Сохранённые фильмы</NavLink>
          </div>
          <Link to="/profile" className="header__container header__container_movies">
             <p className='header__profile-name'>Аккаунт</p>

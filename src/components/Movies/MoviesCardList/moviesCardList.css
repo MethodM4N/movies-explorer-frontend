@@ -5,14 +5,12 @@
 
 @media screen and (max-width: 885px) {
    .moviesCardList {
-      min-height: 1402px;
       padding: 70px 30px 0;
    }
 }
 
 @media screen and (max-width: 485px) {
    .moviesCardList {
-      min-height: 1491px;
       padding: 40px 10px 0;
    }
 }

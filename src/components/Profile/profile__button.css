@@ -15,6 +15,11 @@
    transition: 0.5s ease;
 }
 
+.profile__button:disabled {
+   color: #7f8083;
+   cursor: unset;
+}
+
 .profile__button:last-of-type {
    padding: 0;
    margin: 0 auto 70px;

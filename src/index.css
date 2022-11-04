@@ -71,6 +71,7 @@
 @import url(./components/Profile/profile__info.css);
 @import url(./components/Profile/profile__input.css);
 @import url(./components/Profile/profile__button.css);
+@import url(./components/Profile/profile__error-massage.css);
 @import url(./components/Register/register.css);
 @import url(./components/Register/register__head-link.css);
 @import url(./components/Register/register__title.css);
