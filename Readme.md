@@ -1,6 +1,6 @@
 # Frontend of the Movies explorer(Дипломная работа by [Yandex.Practicum](https://practicum.yandex.ru/ "Практикум"))
 Проектная работа одновременно выполняет роль резюме.
-### Ссылка на работу [клац](https://movies.kolganov.nomorepartiesxyz.ru "Фронт").
+### Ссылка на backend проекта https://github.com/MethodM4N/movies-explorer-api.
 ♪└|∵|┐♪└|∵|┘♪┌|∵|┘♪♪└|∵|┐♪└|∵|┘♪┌|∵|┘♪♪└|∵|┐♪└|∵|┘♪┌|∵|┘♪
 ----
 В данной проектной работе использованы такие **технологии** как:
